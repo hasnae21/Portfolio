@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hasnae Ahouzi | Robotics &amp; AI Freelance Engineer</title>
+  <meta name="description" content="Freelance Robotics & AI Engineer — Computer Vision, Web Dev, Mobile, ROS2. Available for projects." />
+  <meta name="author" content="Hasnae Ahouzi" />
+  <meta property="og:title" content="Hasnae Ahouzi | Robotics & AI Freelance Engineer" />
+  <meta property="og:description" content="Available for freelance: AI, Computer Vision, Web & Mobile Development, Robotics." />
+  <meta property="og:image" content="assets/img/profile.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo">HA<span>.</span></div>
+      <div class="preloader-bar"><div class="preloader-fill"></div></div>
+    </div>
+  </div>
+
+  <div id="scroll-progress"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">HA<span>.</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#services"   class="nav-link">Services</a></li>
+        <li><a href="#about"      class="nav-link">About</a></li>
+        <li><a href="#projects"   class="nav-link">Portfolio</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#skills"     class="nav-link">Skills</a></li>
+        <li><a href="#contact"    class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="CV_AHOUZI_Hasnae_Eng.pdf" class="btn-cv" download><i class="fas fa-download"></i> Resume</a>
+        <a href="#contact" class="btn-hire">Hire Me</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <div class="hero-content" data-aos="fade-right" data-aos-duration="900">
+      <div class="hero-badge"><span class="badge-dot"></span> Available for freelance projects</div>
+      <h1 class="hero-name">Hasnae<br><span class="gradient-text">Ahouzi</span></h1>
+      <div class="hero-role">
+        <span class="typed-text" id="typed"></span><span class="typed-cursor">|</span>
+      </div>
+      <p class="hero-bio">
+        4th-year <strong>Robotics &amp; AI Engineer</strong> at UEMF Fes (2026).
+        I build intelligent systems — computer vision pipelines, autonomous robots,
+        full-stack web &amp; Android apps. Ready to bring your project to life.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary"><i class="fas fa-rocket"></i> Start a Project</a>
+        <a href="#projects" class="btn btn-outline"><i class="fas fa-briefcase"></i> View Portfolio</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/hasnaeahouzi" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/hasnae21" class="social-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <span class="social-link soon-social" title="Instagram – Coming Soon"><i class="fab fa-instagram"></i><span class="soon-tooltip">Coming Soon</span></span>
+      </div>
+    </div>
+
+    <div class="hero-visual" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
+      <div class="hero-card">
+        <div class="hero-avatar">
+          <div class="avatar-ring"></div>
+          <img src="assets/img/profile.jpg" alt="Hasnae Ahouzi"
+               onerror="this.style.display='none';document.querySelector('.avatar-fallback').style.display='flex'" />
+          <div class="avatar-fallback">HA</div>
+        </div>
+        <div class="hero-name-card">
+          <strong>Hasnae Ahouzi</strong>
+          <span>Robotics &amp; AI Engineer</span>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-number" data-target="10">0</span><span class="stat-plus">+</span><span class="stat-label">Projects</span></div>
+          <div class="stat"><span class="stat-number" data-target="3">0</span><span class="stat-label">Internships</span></div>
+          <div class="stat"><span class="stat-number" data-target="5">0</span><span class="stat-label">Services</span></div>
+        </div>
+        <div class="hero-chips">
+          <span><i class="fas fa-map-marker-alt"></i> Fes, Morocco</span>
+          <span><i class="fas fa-graduation-cap"></i> UEMF · 4th Year · 2026</span>
+          <span class="chip-open"><i class="fas fa-circle"></i> Open to work</span>
+        </div>
+      </div>
+    </div>
+
+    <a href="#services" class="scroll-indicator" aria-label="Scroll">
+      <div class="mouse"><div class="mouse-wheel"></div></div>
+    </a>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section section-alt">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">What I Offer</span>
+        <h2 class="section-title">My <span class="gradient-text">Services</span></h2>
+        <p class="section-desc">End-to-end engineering solutions — from proof-of-concept to production-ready delivery.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-icon"><i class="fas fa-eye"></i></div>
+          <h3>AI &amp; Computer Vision</h3>
+          <p>Object detection and classification pipelines using YOLOv8, OpenCV, and deep learning. From dataset preparation to model deployment.</p>
+          <ul class="service-list">
+            <li>Object Detection (YOLOv8 / YOLO)</li>
+            <li>Image Classification &amp; Segmentation</li>
+            <li>Real-time Video Processing</li>
+            <li>Custom Model Training</li>
+          </ul>
+          <div class="service-tags"><span>Python</span><span>YOLOv8</span><span>OpenCV</span><span>Jupyter</span></div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-icon"><i class="fas fa-globe"></i></div>
+          <h3>Web Development</h3>
+          <p>Full-stack web applications — interactive frontends, robust APIs, and clean responsive design with modern frameworks.</p>
+          <ul class="service-list">
+            <li>Frontend — React.js / Astro / HTML/CSS</li>
+            <li>Backend — Laravel / Node.js / PHP</li>
+            <li>REST API Development</li>
+            <li>WordPress &amp; CMS</li>
+          </ul>
+          <div class="service-tags"><span>React.js</span><span>Laravel</span><span>Node.js</span><span>MySQL</span></div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h3>Mobile Development</h3>
+          <p>Android applications with Bluetooth control, real-time data, and clean UI/UX — from concept to Play Store-ready APK.</p>
+          <ul class="service-list">
+            <li>Android (Java / Kotlin)</li>
+            <li>Bluetooth SPP Integration</li>
+            <li>Robot Control Interfaces</li>
+            <li>Real-time Dashboards</li>
+          </ul>
+          <div class="service-tags"><span>Android</span><span>Java</span><span>Kotlin</span><span>Bluetooth</span></div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-icon"><i class="fas fa-robot"></i></div>
+          <h3>Robotics &amp; ROS2</h3>
+          <p>Autonomous mobile robots with navigation, mapping, and simulation. Full ROS2 stack from URDF modeling to real-world deployment.</p>
+          <ul class="service-list">
+            <li>ROS2 Development (Humble)</li>
+            <li>Autonomous Navigation (Nav2)</li>
+            <li>SLAM &amp; Mapping</li>
+            <li>Gazebo Simulation</li>
+          </ul>
+          <div class="service-tags"><span>ROS2</span><span>Nav2</span><span>SLAM</span><span>Python</span></div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="service-icon"><i class="fas fa-microchip"></i></div>
+          <h3>Embedded Systems</h3>
+          <p>Microcontroller-based systems with sensor integration, FPGA programming, and real-time control for IoT and automation.</p>
+          <ul class="service-list">
+            <li>Arduino / PIC Programming</li>
+            <li>FPGA — VHDL / Quartus</li>
+            <li>RFID &amp; Sensor Integration</li>
+            <li>Proteus Simulation</li>
+          </ul>
+          <div class="service-tags"><span>C/C++</span><span>VHDL</span><span>Arduino</span><span>Proteus</span></div>
+        </div>
+
+        <div class="service-card service-card-cta" data-aos="fade-up" data-aos-delay="600">
+          <div class="service-icon"><i class="fas fa-handshake"></i></div>
+          <h3>Let's Collaborate</h3>
+          <p>Have a startup MVP, research prototype, or automation challenge? Whether it's a small script or a full robotic system — I'd love to hear about it.</p>
+          <a href="#contact" class="btn btn-primary" style="margin-top:auto"><i class="fas fa-paper-plane"></i> Get a Quote</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Who I Am</span>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text" data-aos="fade-right">
+          <h3>Engineer. Builder. Problem Solver.</h3>
+          <p>I'm <strong>Hasnae Ahouzi</strong>, a 4th-year engineering student at <strong>Euromed University of Fes (UEMF)</strong>, specializing in Robotics &amp; Cobotics (graduating 2026). My work sits at the crossroads of artificial intelligence, autonomous systems, and software engineering.</p>
+          <p>From training YOLOv8 models on custom datasets to building full-stack web apps and Android interfaces for robots, I thrive on turning complex problems into clean, working solutions. I've completed three professional internships, each adding depth to my technical toolkit.</p>
+          <p>I believe great engineering is about <strong>clarity, impact, and craftsmanship</strong> — and I bring all three to every project I take on.</p>
+          <div class="about-highlights">
+            <div class="highlight"><i class="fas fa-robot"></i><span>Robotics &amp; Cobotics</span></div>
+            <div class="highlight"><i class="fas fa-brain"></i><span>AI &amp; Deep Learning</span></div>
+            <div class="highlight"><i class="fas fa-eye"></i><span>Computer Vision</span></div>
+            <div class="highlight"><i class="fas fa-mobile-alt"></i><span>Web &amp; Mobile Dev</span></div>
+          </div>
+          <div class="about-contact-info">
+            <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:ahouzihasnae@gmail.com">ahouzihasnae@gmail.com</a></div>
+            <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:+212616031415">+212 6 16 03 14 15</a></div>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Fes, Morocco — Remote available</span></div>
+          </div>
+        </div>
+
+        <div class="about-side" data-aos="fade-left">
+          <h3>Languages</h3>
+          <div class="language-list">
+            <div class="language-item">
+              <div class="lang-header"><span class="lang-name">🇲🇦 Arabic</span><span class="lang-level">Native</span></div>
+              <div class="lang-bar"><div class="lang-fill" data-width="100"></div></div>
+            </div>
+            <div class="language-item">
+              <div class="lang-header"><span class="lang-name">🇫🇷 French</span><span class="lang-level">Advanced (C1)</span></div>
+              <div class="lang-bar"><div class="lang-fill" data-width="90"></div></div>
+            </div>
+            <div class="language-item">
+              <div class="lang-header"><span class="lang-name">🇬🇧 English</span><span class="lang-level">Fluent (B2)</span></div>
+              <div class="lang-bar"><div class="lang-fill" data-width="75"></div></div>
+            </div>
+            <div class="language-item">
+              <div class="lang-header"><span class="lang-name">🇪🇸 Spanish</span><span class="lang-level">Beginner (A2)</span></div>
+              <div class="lang-bar"><div class="lang-fill" data-width="30"></div></div>
+            </div>
+          </div>
+
+          <h3 class="mt-2">Hobbies &amp; Interests</h3>
+          <div class="interests">
+            <span class="interest-tag"><i class="fas fa-brain"></i> AI Research</span>
+            <span class="interest-tag"><i class="fas fa-running"></i> Sport</span>
+            <span class="interest-tag"><i class="fas fa-hands-helping"></i> Volunteering</span>
+            <span class="interest-tag"><i class="fas fa-plane"></i> Travel</span>
+            <span class="interest-tag"><i class="fas fa-trophy"></i> Hackathons</span>
+            <span class="interest-tag"><i class="fas fa-cube"></i> 3D Modeling</span>
+            <span class="interest-tag"><i class="fab fa-github"></i> Open Source</span>
+            <span class="interest-tag"><i class="fas fa-book"></i> Tech Watch</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO / PROJECTS -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+        <p class="section-desc">
+          Real projects — from academic research to autonomous robots and production apps.
+          <a href="https://github.com/hasnae21" target="_blank" class="view-all-link">
+            View all on GitHub <i class="fas fa-external-link-alt"></i>
+          </a>
+        </p>
+      </div>
+      <div class="project-filters" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="computer-vision">Computer Vision</button>
+        <button class="filter-btn" data-filter="ai-ml">AI &amp; ML</button>
+        <button class="filter-btn" data-filter="robotics">Robotics</button>
+        <button class="filter-btn" data-filter="web">Web Dev</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="embedded">Embedded</button>
+      </div>
+
+      <div class="projects-grid" id="projects-grid"></div>
+
+      <div class="coming-soon-section" data-aos="fade-up">
+        <div class="coming-soon-card">
+          <div class="cs-icon"><i class="fas fa-rocket"></i></div>
+          <h3>More Projects Coming</h3>
+          <p>Final year thesis (PFE, 2026) and ongoing projects in intelligent robotics optimization, drone navigation, and collaborative cobot design.</p>
+          <div class="cs-topics">
+            <span>🎓 Final Year Thesis — 2026</span>
+            <span>🦾 Cobot Design</span>
+            <span>🚁 Drone Navigation</span>
+            <span>🌿 Olives AI (in progress)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button id="admin-btn" class="admin-fab" title="Manage Projects" onclick="location.href='admin.html'">
+      <i class="fas fa-plus"></i>
+    </button>
+  </section>
+
+  <!-- EXPERIENCE + EDUCATION -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Professional Background</span>
+        <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+      </div>
+
+      <div class="experience-grid">
+        <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="exp-header">
+            <div class="exp-logo"><i class="fas fa-brain"></i></div>
+            <div class="exp-info">
+              <h3>AI Engineering Intern</h3><h4>XAI</h4>
+              <span class="exp-location"><i class="fas fa-map-marker-alt"></i> Morocco</span>
+            </div>
+            <div class="exp-date"><span>Summer 2025</span><span class="exp-duration">2 months</span></div>
+          </div>
+          <div class="exp-body">
+            <p>Contributed to AI research and development projects, working on machine learning pipelines, model integration, and intelligent system design in a professional AI-focused environment.</p>
+            <div class="exp-tasks">
+              <div class="task"><i class="fas fa-check"></i> Developed and tested AI/ML models for real-world applications</div>
+              <div class="task"><i class="fas fa-check"></i> Worked on data processing and model training pipelines</div>
+              <div class="task"><i class="fas fa-check"></i> Collaborated in a fast-paced AI tech environment</div>
+            </div>
+            <div class="exp-tags"><span>AI</span><span>Python</span><span>Machine Learning</span><span>Research</span></div>
+          </div>
+        </div>
+
+        <div class="experience-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="exp-header">
+            <div class="exp-logo"><i class="fas fa-cogs"></i></div>
+            <div class="exp-info">
+              <h3>Software Development Intern</h3><h4>Smart Automation Technologies</h4>
+              <span class="exp-location"><i class="fas fa-map-marker-alt"></i> Tangier, Morocco</span>
+            </div>
+            <div class="exp-date"><span>Jul – Sep 2023</span><span class="exp-duration">3 months</span></div>
+          </div>
+          <div class="exp-body">
+            <p>Built SPAs and full websites using the MEAN stack. Delivered features in Agile sprints with the core dev team.</p>
+            <div class="exp-tasks">
+              <div class="task"><i class="fas fa-check"></i> Built responsive SPAs with Angular</div>
+              <div class="task"><i class="fas fa-check"></i> Developed RESTful APIs with Node.js &amp; Express</div>
+              <div class="task"><i class="fas fa-check"></i> Database design with MongoDB</div>
+            </div>
+            <div class="exp-tags"><span>MEAN Stack</span><span>Angular</span><span>Node.js</span><span>MongoDB</span></div>
+          </div>
+        </div>
+
+        <div class="experience-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="exp-header">
+            <div class="exp-logo"><i class="fab fa-aws"></i></div>
+            <div class="exp-info">
+              <h3>Cloud Infrastructure Intern</h3><h4>YourAWS</h4>
+              <span class="exp-location"><i class="fas fa-map-marker-alt"></i> Tangier, Morocco</span>
+            </div>
+            <div class="exp-date"><span>Jul – Aug 2022</span><span class="exp-duration">2 months</span></div>
+          </div>
+          <div class="exp-body">
+            <p>Migrated WordPress websites to AWS EC2 infrastructure, ensuring scalability and performance optimization.</p>
+            <div class="exp-tasks">
+              <div class="task"><i class="fas fa-check"></i> Migrated WordPress sites to AWS EC2</div>
+              <div class="task"><i class="fas fa-check"></i> Configured Linux server environments</div>
+              <div class="task"><i class="fas fa-check"></i> Optimized site performance and security</div>
+            </div>
+            <div class="exp-tags"><span>AWS</span><span>EC2</span><span>WordPress</span><span>Linux</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="section-header" data-aos="fade-up" style="margin-top:80px">
+        <span class="section-tag">Academic Background</span>
+        <h2 class="section-title">Education</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-marker active"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <span class="timeline-date"><i class="fas fa-calendar-alt"></i> Sep 2023 – 2026 (expected)</span>
+              <span class="timeline-badge active">4th Year · In Progress</span>
+            </div>
+            <h3>Engineering in Robotics &amp; Cobotics</h3>
+            <h4><a href="https://ueuromed.org" target="_blank">Euromed University of Fes (UEMF)</a> — EIDIA School of Digital Engineering &amp; AI</h4>
+            <p>4th-year engineering student. Key subjects: Computer Vision, Deep Learning, ROS2, RTOS, FPGA, Fuzzy Logic, Industrial Automation (API), 3D Modeling (Blender), and Drone Technologies.</p>
+            <div class="timeline-tags"><span>Robotics</span><span>AI/DL</span><span>Computer Vision</span><span>ROS2</span><span>FPGA</span><span>RTOS</span></div>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-left">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header"><span class="timeline-date"><i class="fas fa-calendar-alt"></i> Sep 2019 – Jun 2021</span></div>
+            <h3>Preparatory Cycle in Engineering</h3>
+            <h4>ENSAT — National School of Applied Sciences, Tangier</h4>
+            <p>Intensive 2-year preparatory cycle in Mathematics, Physics, and Computer Science.</p>
+            <div class="timeline-tags"><span>Mathematics</span><span>Physics</span><span>Computer Science</span></div>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header"><span class="timeline-date"><i class="fas fa-calendar-alt"></i> 2019</span></div>
+            <h3>Baccalauréat — Sciences PC (French Option)</h3>
+            <h4>Lycée Moulay Rachid — Tangier</h4>
+            <div class="timeline-tags"><span>Physics-Chemistry</span><span>Mathematics</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Technical Expertise</span>
+        <h2 class="section-title">Skills &amp; <span class="gradient-text">Tools</span></h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
+          <div class="category-header"><div class="category-icon"><i class="fas fa-code"></i></div><h3>Programming</h3></div>
+          <div class="skill-tags">
+            <span class="skill-tag expert">Python</span><span class="skill-tag expert">C / C++</span>
+            <span class="skill-tag advanced">JavaScript</span><span class="skill-tag advanced">Java</span>
+            <span class="skill-tag advanced">Kotlin</span><span class="skill-tag advanced">TypeScript</span>
+            <span class="skill-tag intermediate">Assembler x86</span>
+          </div>
+        </div>
+        <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
+          <div class="category-header"><div class="category-icon"><i class="fas fa-eye"></i></div><h3>AI &amp; Computer Vision</h3></div>
+          <div class="skill-tags">
+            <span class="skill-tag expert">OpenCV</span><span class="skill-tag expert">YOLOv8</span>
+            <span class="skill-tag expert">Deep Learning</span><span class="skill-tag advanced">Jupyter / Colab</span>
+            <span class="skill-tag advanced">MATLAB / Simulink</span><span class="skill-tag advanced">Model-Based Design</span>
+          </div>
+        </div>
+        <div class="skills-category" data-aos="fade-up" data-aos-delay="300">
+          <div class="category-header"><div class="category-icon"><i class="fas fa-globe"></i></div><h3>Web Development</h3></div>
+          <div class="skill-tags">
+            <span class="skill-tag expert">HTML / CSS</span><span class="skill-tag expert">React.js</span>
+            <span class="skill-tag advanced">Laravel / PHP</span><span class="skill-tag advanced">Node.js / Express</span>
+            <span class="skill-tag advanced">Astro / Tailwind</span><span class="skill-tag intermediate">WordPress</span>
+          </div>
+        </div>
+        <div class="skills-category" data-aos="fade-up" data-aos-delay="400">
+          <div class="category-header"><div class="category-icon"><i class="fas fa-robot"></i></div><h3>Robotics &amp; Embedded</h3></div>
+          <div class="skill-tags">
+            <span class="skill-tag expert">ROS2 / Nav2</span><span class="skill-tag advanced">SLAM Toolbox</span>
+            <span class="skill-tag advanced">Embedded C / MicroC</span><span class="skill-tag advanced">VHDL / Quartus</span>
+            <span class="skill-tag advanced">Arduino / PIC</span><span class="skill-tag intermediate">FPGA Cyclone V</span>
+          </div>
+        </div>
+        <div class="skills-category" data-aos="fade-up" data-aos-delay="500">
+          <div class="category-header"><div class="category-icon"><i class="fas fa-mobile-alt"></i></div><h3>Mobile &amp; Design</h3></div>
+          <div class="skill-tags">
+            <span class="skill-tag advanced">Android (Java/Kotlin)</span><span class="skill-tag advanced">Figma</span>
+            <span class="skill-tag advanced">Blender</span><span class="skill-tag intermediate">CATIA</span>
+            <span class="skill-tag intermediate">3D Printing</span>
+          </div>
+        </div>
+        <div class="skills-category" data-aos="fade-up" data-aos-delay="600">
+          <div class="category-header"><div class="category-icon"><i class="fas fa-tools"></i></div><h3>Tools &amp; Methods</h3></div>
+          <div class="skill-tags">
+            <span class="skill-tag advanced">Git / GitHub</span><span class="skill-tag advanced">Agile / Scrum</span>
+            <span class="skill-tag advanced">AWS EC2</span><span class="skill-tag advanced">Trello / Jira</span>
+            <span class="skill-tag intermediate">GitHub Actions</span><span class="skill-tag intermediate">MySQL</span>
+          </div>
+        </div>
+      </div>
+      <div class="skills-legend" data-aos="fade-up">
+        <span><span class="legend-dot expert"></span> Expert</span>
+        <span><span class="legend-dot advanced"></span> Advanced</span>
+        <span><span class="legend-dot intermediate"></span> Intermediate</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Let's Work Together</span>
+        <h2 class="section-title">Start a <span class="gradient-text">Project</span></h2>
+        <p class="section-desc">Have an idea or a challenge? Tell me about it — I'll get back to you within 24 hours.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info" data-aos="fade-right">
+          <div class="contact-card"><i class="fas fa-envelope"></i><div><h4>Email</h4><a href="mailto:ahouzihasnae@gmail.com">ahouzihasnae@gmail.com</a></div></div>
+          <div class="contact-card"><i class="fas fa-phone"></i><div><h4>Phone / WhatsApp</h4><a href="tel:+212616031415">+212 6 16 03 14 15</a></div></div>
+          <div class="contact-card"><i class="fas fa-map-marker-alt"></i><div><h4>Location</h4><span>Fes, Morocco — Remote available</span></div></div>
+          <div class="contact-card"><i class="fas fa-clock"></i><div><h4>Response Time</h4><span>Within 24 hours</span></div></div>
+          <div class="contact-socials">
+            <h4>Connect with me</h4>
+            <div class="social-row">
+              <a href="https://www.linkedin.com/in/hasnaeahouzi" target="_blank" class="social-btn linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+              <a href="https://github.com/hasnae21" target="_blank" class="social-btn github"><i class="fab fa-github"></i> GitHub</a>
+              <span class="social-btn instagram"><i class="fab fa-instagram"></i> Instagram<span class="badge-soon">Soon</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper" data-aos="fade-left">
+          <!-- EmailJS: replace 3 constants in script.js top -->
+          <form id="contact-form" class="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="from_name">Full Name *</label>
+                <input type="text" id="from_name" name="from_name" placeholder="John Doe" required /><span class="form-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="reply_to">Email *</label>
+                <input type="email" id="reply_to" name="reply_to" placeholder="john@example.com" required /><span class="form-error"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Service needed *</label>
+              <select id="subject" name="subject">
+                <option value="">Select a topic…</option>
+                <option>AI &amp; Computer Vision Project</option>
+                <option>Web Development</option>
+                <option>Mobile App Development</option>
+                <option>Robotics / ROS2</option>
+                <option>Embedded Systems</option>
+                <option>Collaboration / Research</option>
+                <option>Other</option>
+              </select>
+              <span class="form-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="message">Project Details *</label>
+              <textarea id="message" name="message" rows="5" placeholder="Describe your project, goals, timeline, and budget…" required></textarea>
+              <span class="form-error"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+              <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
+              <span class="btn-loading" style="display:none"><i class="fas fa-spinner fa-spin"></i> Sending…</span>
+            </button>
+            <div id="form-status" class="form-status"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="footer-logo">HA<span>.</span></a>
+          <p>Robotics &amp; AI Engineer · Freelance Developer<br>Building intelligent systems that work in the real world.</p>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/hasnaeahouzi" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/hasnae21" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <span class="soon-icon" title="Instagram – Coming Soon"><i class="fab fa-instagram"></i></span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">AI &amp; Computer Vision</a></li>
+            <li><a href="#services">Web Development</a></li>
+            <li><a href="#services">Mobile Development</a></li>
+            <li><a href="#services">Robotics &amp; ROS2</a></li>
+            <li><a href="#services">Embedded Systems</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Portfolio</h4>
+          <ul>
+            <li><a href="#projects">Trash Detector Robot</a></li>
+            <li><a href="#projects">ROS2 Café Robot</a></li>
+            <li><a href="#projects">SerbAI Mobile App</a></li>
+            <li><a href="#projects">Hack AI Morocco</a></li>
+            <li><a href="https://github.com/hasnae21" target="_blank">All on GitHub ↗</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><a href="mailto:ahouzihasnae@gmail.com">ahouzihasnae@gmail.com</a></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><span>+212 6 16 03 14 15</span></div>
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Fes, Morocco</span></div>
+          <div class="footer-contact-item"><i class="fas fa-wifi"></i><span>Remote available</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="current-year"></span> <strong>Hasnae Ahouzi</strong>. All rights reserved.</p>
+        <p>Crafted with <i class="fas fa-heart" style="color:var(--primary)"></i> in Morocco</p>
+        <span id="admin-trigger" title="">·</span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
