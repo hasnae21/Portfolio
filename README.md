@@ -2,7 +2,7 @@
 
 Personal portfolio website for **Hasnae Ahouzi**, Digital Engineering & AI student specialized in Robotics & Cobotics at UEMF Fes.
 
-**Live demo:** `[https://YOUR_GITHUB_USERNAME.github.io/portfolio](https://hasnae21.github.io/Portfolio/)`
+**Live demo:** `[https://hasnae21.github.io/Portfolio/]`
 
 ---
 
