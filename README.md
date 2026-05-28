@@ -10,3 +10,4 @@ Personal portfolio website for **Hasnae Ahouzi**, Digital Engineering & AI stude
 
 - Email: ahouzihasnae@gmail.com
 - University: hasnae.ahouzi@eidia.ueuromed.org
+- num: 0616031415
