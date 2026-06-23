@@ -2,7 +2,7 @@
 
 Personal portfolio website for **Hasnae Ahouzi**, Digital Engineering & AI student specialized in Robotics & Cobotics at UEMF Fes.
 
-**Live demo:** `https://YOUR_GITHUB_USERNAME.github.io/portfolio`
+**Live demo:** `https://hasnae21.github.io/Portfolio/`
 
 ---
 
@@ -18,15 +18,15 @@ git remote add origin https://github.com/YOUR_USERNAME/portfolio.git
 git push -u origin main
 
 # 3. Go to Settings → Pages → Source: main branch / root
-# 4. Your site is live at https://YOUR_USERNAME.github.io/portfolio
+# 4. Your site is live at https://hasnae21.github.io/Portfolio/
 ```
 
 ---
 
 ## ⚙️ Configuration checklist
 
-### 1 — Your social links (index.html)
-Search for `YOUR_LINKEDIN_URL` and `YOUR_GITHUB_URL` in `index.html` and replace with your real URLs.
+### 1 — Social links (index.html)
+Search for `https://www.linkedin.com/in/hasnaeahouzi` and `https://hasnae21.github.io/` in `index.html` and replace with your real URLs.
 
 ### 2 — EmailJS (contact form)
 The contact form uses [EmailJS](https://www.emailjs.com) (free tier, 200 emails/month).
