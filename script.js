@@ -8,9 +8,9 @@
    4. Replace the 3 constants below
 ═══════════════════════════════════════════════════════ */
 
-const EMAILJS_PUBLIC_KEY  = 'YOUR_EMAILJS_PUBLIC_KEY';
+const EMAILJS_PUBLIC_KEY  = 'bTjIQe2j9_B3CiHld';
 const EMAILJS_SERVICE_ID  = 'service_3nqr84f';
-const EMAILJS_TEMPLATE_ID = '__ejs-test-mail-service__';
+const EMAILJS_TEMPLATE_ID = 'template_mwyd959';
 
 const STORAGE_KEY = 'hasnae_portfolio_projects';
 
