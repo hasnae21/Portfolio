@@ -8,9 +8,9 @@
 const STORAGE_KEY  = 'hasnae_portfolio_projects';
 const SESSION_KEY  = 'hasnae_admin_session';
 const PASS_KEY     = 'hasnae_admin_password';
-const DEFAULT_PASS = 'hasnae2024';  // ← change after first login
+const DEFAULT_PASS = 'hasnae2026';  // ← change after first login
 
-/* ─── Simple hash (not cryptographic — just obfuscation) ─── */
+/* ─── Simple hash  ─── */
 function simpleHash(str) {
   let h = 0;
   for (let i = 0; i < str.length; i++) {
@@ -212,9 +212,9 @@ function renderTable() {
           ${(p.tags || []).length > 4 ? `<span>+${p.tags.length - 4}</span>` : ''}
         </div>
       </td>
-      <td>${escHtml(p.date || '—')}</td>
+      <td>${escHtml(p.date || '|')}</td>
       <td><span class="status-pill ${p.status || ''}">${(p.status || '').replace('-', ' ')}</span></td>
-      <td class="featured-star">${p.featured ? '⭐' : '—'}</td>
+      <td class="featured-star">${p.featured ? '⭐' : ' - '}</td>
       <td>
         <div class="row-actions">
           <button class="btn-edit" onclick="openEdit('${p.id}')">
