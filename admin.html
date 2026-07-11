@@ -1,263 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin – Portfolio Manager | Hasnae AHOUZI</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="admin.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin – Portfolio Manager | Hasnae Ahouzi</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-  <!-- Lock Screen -->
-  <div id="lock-screen">
-    <div class="lock-card">
-      <div class="lock-icon"><i class="fas fa-lock"></i></div>
-      <h2>Portfolio Admin</h2>
-      <p>Enter your password to manage projects</p>
-      <form id="login-form">
-        <div class="lock-input-wrap">
-          <input type="password" id="lock-password" placeholder="Password" autocomplete="current-password" />
-          <button type="button" id="toggle-pw" class="toggle-pw">
-            <i class="fas fa-eye"></i>
-          </button>
+    <!-- Lock Screen -->
+    <div id="lock-screen">
+        <div class="lock-card">
+            <div class="lock-icon"><i class="fas fa-lock"></i></div>
+            <h2>Portfolio Admin</h2>
+            <p>Enter your password to manage projects</p>
+            <form id="login-form">
+                <div class="lock-input-wrap">
+                    <input type="password" id="lock-password" placeholder="Password" required>
+                    <button type="button" class="toggle-pw" id="toggle-pw"><i class="fas fa-eye"></i></button>
+                </div>
+                <div class="lock-error" id="lock-error"></div>
+                <button type="submit" class="btn-login">
+                    <i class="fas fa-unlock"></i> Unlock
+                </button>
+            </form>
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to portfolio
+            </a>
         </div>
-        <div id="lock-error" class="lock-error"></div>
-        <button type="submit" class="btn-login">
-          <i class="fas fa-unlock"></i> Unlock
-        </button>
-      </form>
-      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to portfolio</a>
     </div>
-  </div>
 
-  <!-- Admin App (hidden until authenticated) -->
-  <div id="admin-app" style="display:none">
-
-    <!-- Header -->
-    <header class="admin-header">
-      <div class="admin-header-inner">
-        <div class="admin-brand">
-          <span class="brand-logo">HA<span>.</span></span>
-          <span class="brand-sub">Portfolio Admin</span>
-        </div>
-        <div class="admin-header-actions">
-          <button id="btn-export" class="btn-icon" title="Export JSON">
-            <i class="fas fa-file-export"></i> Export
-          </button>
-          <label class="btn-icon" title="Import JSON" for="import-file">
-            <i class="fas fa-file-import"></i> Import
-          </label>
-          <input type="file" id="import-file" accept=".json" style="display:none" />
-          <a href="index.html" class="btn-icon" title="View Portfolio">
-            <i class="fas fa-eye"></i> Portfolio
-          </a>
-          <button id="btn-logout" class="btn-icon btn-danger" title="Logout">
-            <i class="fas fa-sign-out-alt"></i>
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <!-- Main -->
-    <main class="admin-main">
-
-      <!-- Stats bar -->
-      <div class="admin-stats">
-        <div class="a-stat">
-          <span class="a-stat-n" id="stat-total">0</span>
-          <span class="a-stat-l">Total Projects</span>
-        </div>
-        <div class="a-stat">
-          <span class="a-stat-n" id="stat-featured">0</span>
-          <span class="a-stat-l">Featured</span>
-        </div>
-        <div class="a-stat">
-          <span class="a-stat-n" id="stat-completed">0</span>
-          <span class="a-stat-l">Completed</span>
-        </div>
-        <div class="a-stat">
-          <span class="a-stat-n" id="stat-categories">0</span>
-          <span class="a-stat-l">Categories</span>
-        </div>
-      </div>
-
-      <!-- Toolbar -->
-      <div class="admin-toolbar">
-        <div class="toolbar-left">
-          <div class="search-wrap">
-            <i class="fas fa-search"></i>
-            <input type="text" id="search-input" placeholder="Search projects…" />
-          </div>
-          <select id="filter-category" class="admin-select">
-            <option value="all">All categories</option>
-            <option value="computer-vision">Computer Vision</option>
-            <option value="ai-ml">AI & ML</option>
-            <option value="embedded">Embedded</option>
-            <option value="web">Web Dev</option>
-            <option value="mobile">Mobile</option>
-            <option value="robotics">Robotics</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <button id="btn-add" class="btn-primary-a">
-          <i class="fas fa-plus"></i> Add Project
-        </button>
-      </div>
-
-      <!-- Projects table -->
-      <div class="admin-table-wrap">
-        <table class="admin-table" id="projects-table">
-          <thead>
-            <tr>
-              <th>Icon</th>
-              <th>Title &amp; Subtitle</th>
-              <th>Category</th>
-              <th>Tags</th>
-              <th>Date</th>
-              <th>Status</th>
-              <th>Featured</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="table-body"></tbody>
-        </table>
-        <div id="table-empty" class="table-empty" style="display:none">
-          <i class="fas fa-folder-open"></i>
-          <p>No projects found. Add one!</p>
-        </div>
-      </div>
-
-    </main>
-  </div>
-
-  <!-- ══════════ PROJECT MODAL ══════════ -->
-  <div id="project-modal" class="modal-overlay" style="display:none">
-    <div class="modal">
-      <div class="modal-header">
-        <h3 id="modal-title">Add Project</h3>
-        <button class="modal-close" id="modal-close"><i class="fas fa-times"></i></button>
-      </div>
-
-      <form id="project-form" class="modal-form" novalidate>
-        <input type="hidden" id="f-id" />
-
-        <div class="modal-grid">
-          <!-- Left column -->
-          <div class="modal-col">
-            <div class="f-group">
-              <label for="f-title">Title *</label>
-              <input type="text" id="f-title" placeholder="Trash Detector Robot" required />
+    <!-- Admin App -->
+    <div id="admin-app" style="display:none">
+        <header class="admin-header">
+            <div class="admin-header-inner">
+                <div class="admin-brand">
+                    <div class="brand-logo">HA<span>.</span>Portfolio Admin</div>
+                </div>
+                <div class="admin-header-actions">
+                    <button class="btn-icon" id="btn-certificates">
+                        <i class="fas fa-certificate"></i>
+                        <span>Certificates</span>
+                    </button>
+                    <button class="btn-icon" id="btn-export">
+                        <i class="fas fa-download"></i>
+                        <span>Export</span>
+                    </button>
+                    <label class="btn-icon">
+                        <i class="fas fa-upload"></i>
+                        <span>Import</span>
+                        <input type="file" id="import-file" accept=".json" style="display:none">
+                    </label>
+                    <button class="btn-icon btn-danger" id="btn-logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </button>
+                </div>
             </div>
-            <div class="f-group">
-              <label for="f-subtitle">Subtitle *</label>
-              <input type="text" id="f-subtitle" placeholder="Real-time Waste Detection" required />
-            </div>
-            <div class="f-group">
-              <label for="f-description">Description *</label>
-              <textarea id="f-description" rows="4" placeholder="Describe the project…" required></textarea>
-            </div>
-            <div class="f-group">
-              <label for="f-tags">Tags <span class="f-hint">(comma-separated)</span></label>
-              <input type="text" id="f-tags" placeholder="Python, OpenCV, YOLOv8" />
-            </div>
-          </div>
+        </header>
 
-          <!-- Right column -->
-          <div class="modal-col">
-            <div class="f-row">
-              <div class="f-group">
-                <label for="f-category">Category *</label>
-                <select id="f-category" required>
-                  <option value="">Select…</option>
-                  <option value="computer-vision">Computer Vision</option>
-                  <option value="ai-ml">AI & ML</option>
-                  <option value="embedded">Embedded</option>
-                  <option value="web">Web Dev</option>
-                  <option value="robotics">Robotics</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div class="f-group">
-                <label for="f-date">Year</label>
-                <input type="text" id="f-date" placeholder="2024" maxlength="4" />
-              </div>
+        <main class="admin-main">
+            <div class="admin-stats">
+                <div class="a-stat">
+                    <span class="a-stat-n" id="stat-total">0</span>
+                    <span class="a-stat-l">Total Projects</span>
+                </div>
+                <div class="a-stat">
+                    <span class="a-stat-n" id="stat-featured">0</span>
+                    <span class="a-stat-l">Featured</span>
+                </div>
+                <div class="a-stat">
+                    <span class="a-stat-n" id="stat-completed">0</span>
+                    <span class="a-stat-l">Completed</span>
+                </div>
+                <div class="a-stat">
+                    <span class="a-stat-n" id="stat-categories">0</span>
+                    <span class="a-stat-l">Categories</span>
+                </div>
             </div>
 
-            <div class="f-group">
-              <label for="f-icon">Emoji Icon</label>
-              <input type="text" id="f-icon" placeholder="🤖" maxlength="4" />
-            </div>
-            <div class="f-group">
-              <label for="f-image">Image URL <span class="f-hint">(optional)</span></label>
-              <input type="url" id="f-image" placeholder="https://…/image.jpg" />
-            </div>
-            <div class="f-group">
-              <label for="f-github">GitHub URL</label>
-              <input type="url" id="f-github" placeholder="https://github.com/…" />
-            </div>
-            <div class="f-group">
-              <label for="f-demo">Demo URL</label>
-              <input type="url" id="f-demo" placeholder="https://…" />
+            <div class="admin-toolbar">
+                <div class="toolbar-left">
+                    <div class="search-wrap">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-input" placeholder="Search projects...">
+                    </div>
+                    <select class="admin-select" id="filter-category">
+                        <option value="all">All categories</option>
+                        <option value="computer-vision">Computer Vision</option>
+                        <option value="ai-ml">AI & ML</option>
+                        <option value="embedded">Embedded</option>
+                        <option value="web">Web Dev</option>
+                        <option value="mobile">Mobile</option>
+                        <option value="robotics">Robotics</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <button class="btn-primary-a" id="btn-add">
+                    <i class="fas fa-plus"></i> Add Project
+                </button>
             </div>
 
-            <div class="f-row">
-              <div class="f-group">
-                <label for="f-status">Status</label>
-                <select id="f-status">
-                  <option value="completed">Completed</option>
-                  <option value="in-progress">In Progress</option>
-                  <option value="planned">Planned</option>
-                </select>
-              </div>
-              <div class="f-group f-check">
-                <label class="checkbox-label">
-                  <input type="checkbox" id="f-featured" />
-                  <span class="checkmark"></span>
-                  Featured
-                </label>
-              </div>
+            <div class="admin-table-wrap">
+                <table class="admin-table" id="projects-table">
+                    <thead>
+                        <tr>
+                            <th>Icon</th>
+                            <th>Title & Subtitle</th>
+                            <th>Category</th>
+                            <th>Tags</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Featured</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body"></tbody>
+                </table>
+                <div class="table-empty" id="table-empty">
+                    <i class="fas fa-folder-open"></i>
+                    <p>No projects found. Add one!</p>
+                </div>
             </div>
-          </div>
-        </div>
-
-        <div id="modal-error" class="modal-error" style="display:none"></div>
-
-        <div class="modal-actions">
-          <button type="button" class="btn-cancel" id="btn-cancel">Cancel</button>
-          <button type="submit" class="btn-save" id="btn-save">
-            <i class="fas fa-save"></i> Save Project
-          </button>
-        </div>
-      </form>
+        </main>
     </div>
-  </div>
 
-  <!-- Confirm delete modal -->
-  <div id="confirm-modal" class="modal-overlay" style="display:none">
-    <div class="modal modal-sm">
-      <div class="modal-header">
-        <h3>Delete Project</h3>
-        <button class="modal-close" id="confirm-close"><i class="fas fa-times"></i></button>
-      </div>
-      <div class="modal-body">
-        <div class="confirm-icon"><i class="fas fa-exclamation-triangle"></i></div>
-        <p>Are you sure you want to delete <strong id="confirm-name"></strong>?<br>This action cannot be undone.</p>
-      </div>
-      <div class="modal-actions">
-        <button class="btn-cancel" id="confirm-cancel">Cancel</button>
-        <button class="btn-delete" id="confirm-delete"><i class="fas fa-trash"></i> Delete</button>
-      </div>
+    <!-- Add/Edit Project Modal -->
+    <div class="modal-overlay" id="project-modal" style="display:none">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal-title">Add Project</h3>
+                <button class="modal-close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="modal-form" id="project-form">
+                <input type="hidden" id="f-id">
+                <div class="modal-grid">
+                    <div class="modal-col">
+                        <div class="f-group">
+                            <label>Title *</label>
+                            <input type="text" id="f-title" required>
+                        </div>
+                        <div class="f-group">
+                            <label>Subtitle *</label>
+                            <input type="text" id="f-subtitle" required>
+                        </div>
+                        <div class="f-group">
+                            <label>Description *</label>
+                            <textarea id="f-description" rows="4" required></textarea>
+                        </div>
+                        <div class="f-group">
+                            <label>Tags (comma-separated)</label>
+                            <input type="text" id="f-tags" placeholder="Python, YOLOv8, OpenCV">
+                        </div>
+                        <div class="f-row">
+                            <div class="f-group">
+                                <label>Category *</label>
+                                <select id="f-category" required>
+                                    <option value="">Select…</option>
+                                    <option value="computer-vision">Computer Vision</option>
+                                    <option value="ai-ml">AI & ML</option>
+                                    <option value="embedded">Embedded</option>
+                                    <option value="web">Web Dev</option>
+                                    <option value="mobile">Mobile</option>
+                                    <option value="robotics">Robotics</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="f-group">
+                                <label>Year</label>
+                                <input type="text" id="f-date" placeholder="2024">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-col">
+                        <div class="f-row">
+                            <div class="f-group">
+                                <label>Emoji Icon</label>
+                                <input type="text" id="f-icon" placeholder="🤖">
+                            </div>
+                            <div class="f-group">
+                                <label>Image URL (optional)</label>
+                                <input type="text" id="f-image" placeholder="assets/img/...">
+                            </div>
+                        </div>
+                        <div class="f-group">
+                            <label>GitHub URL</label>
+                            <input type="url" id="f-github" placeholder="https://github.com/...">
+                        </div>
+                        <div class="f-group">
+                            <label>Demo URL</label>
+                            <input type="url" id="f-demo" placeholder="https://...">
+                        </div>
+                        <div class="f-row">
+                            <div class="f-group">
+                                <label>Status</label>
+                                <select id="f-status">
+                                    <option value="completed">Completed</option>
+                                    <option value="in-progress">In Progress</option>
+                                    <option value="planned">Planned</option>
+                                </select>
+                            </div>
+                            <div class="f-group f-check">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="f-featured">
+                                    <span class="checkmark"></span>
+                                    Featured
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-error" id="modal-error" style="display:none"></div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-cancel" id="btn-cancel">Cancel</button>
+                    <button type="submit" class="btn-save">
+                        <i class="fas fa-save"></i> Save Project
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
-  </div>
 
-  <!-- Toast notification -->
-  <div id="toast" class="toast" style="display:none"></div>
+    <!-- Delete Confirmation Modal -->
+    <div class="modal-overlay" id="confirm-modal" style="display:none">
+        <div class="modal modal-sm">
+            <div class="modal-body">
+                <i class="fas fa-exclamation-triangle confirm-icon"></i>
+                <h3>Delete Project</h3>
+                <p>Are you sure you want to delete <strong id="confirm-name"></strong>? This action cannot be undone.</p>
+                <div class="modal-actions">
+                    <button class="btn-cancel" id="confirm-cancel">Cancel</button>
+                    <button class="btn-delete" id="confirm-delete">
+                        <i class="fas fa-trash"></i> Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <script src="admin.js"></script>
+    <!-- Certificates Modal -->
+    <div class="modal-overlay" id="certificates-modal" style="display:none">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-certificate"></i> Manage Certificates</h3>
+                <button class="modal-close" onclick="closeModal('certificates-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-form">
+                <div class="admin-toolbar">
+                    <div class="toolbar-left">
+                        <button class="btn-primary-a" onclick="openAddCertificate()">
+                            <i class="fas fa-plus"></i> Add Certificate
+                        </button>
+                    </div>
+                </div>
+                <div class="admin-table-wrap">
+                    <table class="admin-table" id="certificates-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Issuer</th>
+                                <th>Date</th>
+                                <th>Category</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="certificates-body"></tbody>
+                    </table>
+                    <div class="table-empty" id="certificates-empty" style="display:none">
+                        <i class="fas fa-certificate"></i>
+                        <p>No certificates yet. Add your first one!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Certificate Modal -->
+    <div class="modal-overlay" id="certificate-form-modal" style="display:none">
+        <div class="modal modal-sm">
+            <div class="modal-header">
+                <h3 id="certificate-modal-title">Add Certificate</h3>
+                <button class="modal-close" onclick="closeModal('certificate-form-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="modal-form" id="certificate-form" onsubmit="saveCertificate(event)">
+                <div class="f-group">
+                    <label>Certificate Title *</label>
+                    <input type="text" id="cert-title" required placeholder="e.g., Web Developer Bootcamp">
+                </div>
+                <div class="f-group">
+                    <label>Issuer/Organization *</label>
+                    <input type="text" id="cert-issuer" required placeholder="e.g., Simplon.co, OFPPT">
+                </div>
+                <div class="f-row">
+                    <div class="f-group">
+                        <label>Date *</label>
+                        <input type="text" id="cert-date" required placeholder="e.g., 2022, Jul 2023">
+                    </div>
+                    <div class="f-group">
+                        <label>Category</label>
+                        <select id="cert-category">
+                            <option value="education">Education</option>
+                            <option value="training">Training</option>
+                            <option value="competition">Competition</option>
+                            <option value="certification">Certification</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="f-group">
+                    <label>Image Path *</label>
+                    <input type="text" id="cert-image" required placeholder="assets/img/certificates/your-image.jpg">
+                    <small class="f-hint">Path to your certificate image</small>
+                </div>
+                <div class="f-group">
+                    <label>Credential URL (optional)</label>
+                    <input type="url" id="cert-url" placeholder="https://...">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-cancel" onclick="closeModal('certificate-form-modal')">Cancel</button>
+                    <button type="submit" class="btn-save">
+                        <i class="fas fa-save"></i> Save Certificate
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Certificate Confirmation -->
+    <div class="modal-overlay" id="cert-delete-modal" style="display:none">
+        <div class="modal modal-sm">
+            <div class="modal-body">
+                <i class="fas fa-exclamation-triangle confirm-icon"></i>
+                <h3>Delete Certificate</h3>
+                <p>Are you sure you want to delete <strong id="cert-delete-name"></strong>? This action cannot be undone.</p>
+                <div class="modal-actions">
+                    <button class="btn-cancel" onclick="closeModal('cert-delete-modal')">Cancel</button>
+                    <button class="btn-delete" onclick="confirmDeleteCertificate()">
+                        <i class="fas fa-trash"></i> Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast" style="display:none"></div>
+
+    <script src="admin.js"></script>
 </body>
 </html>

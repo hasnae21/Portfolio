@@ -209,7 +209,78 @@ function setupAdminTrigger() {
   });
 }
 
+/* ─── Render Certificates ─── */
+function renderCertificates() {
+  const grid = document.getElementById('certificates-grid');
+  if (!grid) return;
+
+  const certs = getCertificates();
+
+  if (certs.length === 0) {
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:48px;color:var(--text-muted)">
+            <i class="fas fa-certificate" style="font-size:2.5rem;display:block;margin-bottom:12px;opacity:0.4"></i>
+            <p>No certificates yet</p>
+        </div>`;
+    return;
+  }
+
+  grid.innerHTML = certs.map(cert => `
+        <div class="certificate-card" data-aos="fade-up" onclick="openCertificateModal('${cert.image}', '${cert.title}')">
+            <img src="${cert.image}" alt="${cert.title}" class="certificate-image" onerror="this.src='assets/img/cert-placeholder.png'">
+            <div class="certificate-body">
+                <span class="certificate-category ${cert.category}">${cert.category}</span>
+                <h3 class="certificate-title">${cert.title}</h3>
+                <p class="certificate-issuer">${cert.issuer}</p>
+                <p class="certificate-date">
+                    <i class="fas fa-calendar-alt"></i> ${cert.date}
+                </p>
+            </div>
+        </div>
+    `).join('');
+}
+
+/* ─── Certificate Modal ─── */
+function openCertificateModal(image, title) {
+  let modal = document.getElementById('certificate-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'certificate-modal';
+    modal.className = 'certificate-modal';
+    modal.innerHTML = `
+            <span class="certificate-modal-close" onclick="closeCertificateModal()">&times;</span>
+            <img src="" alt="Certificate">
+        `;
+    document.body.appendChild(modal);
+  }
+
+  modal.querySelector('img').src = image;
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCertificateModal() {
+  const modal = document.getElementById('certificate-modal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+// Close modal on ESC key
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeCertificateModal();
+});
+
+/* ─── Get Certificates ─── */
+function getCertificates() {
+  try {
+    const s = localStorage.getItem('hasnae_portfolio_certificates');
+    return s ? JSON.parse(s) : [];
+  } catch { return []; }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+
   setTimeout(() => document.getElementById('preloader')?.classList.add('hidden'), 1600);
   AOS.init({ duration: 700, once: true, offset: 60, easing: 'ease-out-cubic' });
   setupNavbar();
@@ -220,6 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupObservers();
   typeAnim();
   renderProjects();
+  renderCertificates(); 
   document.getElementById('back-to-top')?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   document.getElementById('current-year').textContent = new Date().getFullYear();
 
