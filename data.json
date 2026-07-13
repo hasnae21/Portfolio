@@ -173,7 +173,7 @@
       "description": "Web application using deep learning and image processing to detect and classify skin diseases from user-uploaded photos. Trained on Google Colab with Python and Jupyter.",
       "category": "ai-ml",
       "tags": ["Python", "Deep Learning", "OpenCV", "Jupyter", "Google Colab"],
-      "github": null,
+      "github": "https://github.com/hasnae21/Skin_Diseases_detection.git",
       "demo": null,
       "icon": "🩺",
       "featured": false,
@@ -259,7 +259,7 @@
       "issuer": "OPENCLASSROOMS",
       "date": "29/11/2022",
       "category": "certification",
-      "image": "assets/img/certificates/openclassrooms-ux-design.jpg",
+      "image": "assets/img/certificates/UXdesign/UXdesign_page-0001.jpg",
       "url": null
     },
     {
@@ -268,25 +268,25 @@
       "issuer": "Climatic Peace Foundation (Head of Morocco OC)",
       "date": "19 Feb 2025",
       "category": "certification",
-      "image": "assets/img/certificates/climatic-peace-certificate.jpg",
+      "image": "assets/img/certificates/Ahouzi-Hasnae_certificates/Ahouzi Hasnae_certificates_page-0001.jpg",
       "url": null
     },
     {
       "id": "c3",
-      "title": "SOLIHACKATHON — Coding Competition Participation",
+      "title": "SOLIHACKATHON, Coding Competition Participation",
       "issuer": "SOLICODE Tanger — OFPPT & Simplon",
       "date": "2022",
       "category": "competition",
-      "image": "assets/img/competitions/solihackathon-2022.jpg",
+      "image": "assets/img/competitions/comp1.jpeg",
       "url": null
     },
     {
       "id": "c4",
-      "title": "SOLI HACKATHON — Certificat de Participation (2ème Edition)",
+      "title": "SOLI-HACKATHON, Certificat de Participation (2ème Edition)",
       "issuer": "SOLICODE Tanger — OFPPT & Simplon",
       "date": "15 Juin 2023",
       "category": "competition",
-      "image": "assets/img/competitions/solihackathon-2023.jpg",
+      "image": "assets/img/competitions/comp0.jpeg",
       "url": null
     },
     {
@@ -295,7 +295,7 @@
       "issuer": "Simplon.co — Centre Solidaire Digital SoliCode, Tanger",
       "date": "04/09/2023",
       "category": "training",
-      "image": "assets/img/certificates/simplon-mobile-2023.jpg",
+      "image": "assets/img/certificates/certif3.jpeg",
       "url": null
     },
     {
@@ -304,7 +304,7 @@
       "issuer": "OFPPT — Institut Spécialisé de Technologie Appliquée NTIC, Tanger",
       "date": "Juin 2022",
       "category": "certification",
-      "image": "assets/img/certificates/ofppt-web-2022.jpg",
+      "image": "assets/img/certificates/certif0.jpeg",
       "url": null
     },
     {
@@ -313,7 +313,7 @@
       "issuer": "Simplon.co — Centre Solidaire Digital SoliCode, Tanger",
       "date": "12/09/2022",
       "category": "training",
-      "image": "assets/img/certificates/simplon-web-2022.jpg",
+      "image": "assets/img/certificates/certif2.jpeg",
       "url": null
     },
     {
@@ -322,7 +322,7 @@
       "issuer": "OFPPT — Office de la Formation Professionnelle et de la Promotion du Travail",
       "date": "Juillet 2023",
       "category": "certification",
-      "image": "assets/img/certificates/ofppt-mobile-2023.jpg",
+      "image": "assets/img/certificates/certif1.jpeg",
       "url": null
     }
   ],
