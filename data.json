@@ -1,0 +1,348 @@
+{
+  "profile": {
+    "name": "Hasnae Ahouzi",
+    "title": "Robotics & AI Engineer",
+    "email": "hasnae.ahouzi@eidia.ueuromed.org",
+    "phone": "+212 6 16 03 14 15",
+    "location": "Fes, Morocco",
+    "bio": "4th-year Robotics & AI Engineer at UEMF Fes (2027). I build intelligent systems — computer vision pipelines, autonomous robots, full-stack web & Android apps. Ready to bring your project to life.",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/hasnaeahouzi",
+      "github": "https://github.com/hasnae21"
+    }
+  },
+  
+  "journey": [
+    {
+      "id": "j1",
+      "period": "Sep 2023 - 2027",
+      "status": "Current",
+      "title": "Engineering in Robotics & Cobotics",
+      "institution": "Euromed University of Fes (UEMF)",
+      "description": "5th-year engineering student at EIDIA School. Specializing in computer vision, ROS2, autonomous systems, and AI.",
+      "tags": ["Robotics", "AI/DL", "Computer Vision", "ROS2", "FPGA"]
+    },
+    {
+      "id": "j2",
+      "period": "Sep 2022 - Jul 2023",
+      "status": "Certified",
+      "title": "Mobile Developer Bootcamp",
+      "institution": "Simplon.co & OFPPT",
+      "description": "Intensive 10-month bootcamp focused on Android development. Built mobile applications with Java/Kotlin, Bluetooth integration, and real-time data handling.",
+      "tags": ["Android", "Java", "Kotlin", "Mobile UI/UX", "Bluetooth"]
+    },
+    {
+      "id": "j3",
+      "period": "Oct 2021 - Jul 2022",
+      "status": "Certified",
+      "title": "Web Developer Bootcamp",
+      "institution": "Simplon.co & OFPPT",
+      "description": "9-month intensive full-stack development training. Mastered MEAN stack, Laravel, React, and modern web technologies through project-based learning.",
+      "tags": ["MEAN Stack", "Laravel", "React", "Full-Stack"]
+    },
+    {
+      "id": "j4",
+      "period": "Sep 2019 - Jun 2021",
+      "status": "Completed",
+      "title": "Preparatory Cycle in Engineering",
+      "institution": "ENSAT, National School of Applied Sciences, Tangier",
+      "description": "Intensive 2-year preparatory cycle in Mathematics, Physics, and Computer Science. Built strong foundations in engineering principles.",
+      "tags": ["Mathematics", "Physics", "Computer Science"]
+    },
+    {
+      "id": "j5",
+      "period": "2019",
+      "status": "Completed",
+      "title": "Baccalauréat, Sciences PC (French Option)",
+      "institution": "Lycée Moulay Rachid, Tangier",
+      "description": "High school diploma with honors in Physics-Chemistry and Mathematics.",
+      "tags": ["Physics-Chemistry", "Mathematics"]
+    }
+  ],
+
+  "experience": [
+    {
+      "id": "e1",
+      "title": "AI Innovator, Rally IA Future Lab",
+      "company": "Ministry of Digital Transition",
+      "location": "Merzouga, Morocco",
+      "period": "Jun 16 - 20, 2026",
+      "duration": "5 Days",
+      "description": "Selected to participate in Morocco's premier national AI competition under the High Patronage of HM King Mohammed VI. Collaborated with top engineers and researchers to prototype innovative AI solutions.",
+      "tasks": [
+        "Engaged in intensive AI training in the field of GreenTECH for discovering new  Arable land and desertification solutions",
+        "Prototyped high-impact AI solutions with expert mentorship",
+        "Networked with 1,000+ top AI talents across Morocco"
+      ],
+      "tags": ["AI Innovation", "Hackathon", "Prototyping", "National Initiative"]
+    },
+    {
+      "id": "e2",
+      "title": "AI Engineering Intern",
+      "company": "XAI",
+      "location": "Remote | Rabat, Morocco",
+      "period": "Summer 2025",
+      "duration": "2 months",
+      "description": "Contributed to AI research and development projects, working on machine learning pipelines, model integration, and intelligent system design.",
+      "tasks": [
+        "Developed and tested AI/ML models for real-world applications",
+        "Worked on data processing and model training pipelines",
+        "Collaborated in a fast-paced AI tech environment"
+      ],
+      "tags": ["AI", "Python", "Machine Learning", "Research"]
+    },
+    {
+      "id": "e3",
+      "title": "Software Development Intern",
+      "company": "Smart Automation Technologies (SAT)",
+      "location": "Tangier, Morocco",
+      "period": "Summer 2023",
+      "duration": "3 months",
+      "description": "Built SPAs and full websites using the MEAN stack. Delivered features in Agile sprints with the core dev team.",
+      "tasks": [
+        "Built responsive SPAs with Angular",
+        "Developed RESTful APIs with Node.js & Express",
+        "Database design with MongoDB"
+      ],
+      "tags": ["MEAN Stack", "Angular", "Node.js", "MongoDB"]
+    },
+    {
+      "id": "e4",
+      "title": "Cloud Infrastructure Intern",
+      "company": "YourAWS",
+      "location": "Tangier, Morocco",
+      "period": "Summer 2022",
+      "duration": "2 months",
+      "description": "Migrated WordPress websites to AWS EC2 infrastructure, ensuring scalability and performance optimization.",
+      "tasks": [
+        "Migrated WordPress sites to AWS EC2",
+        "Configured Linux server environments",
+        "Optimized site performance and security"
+      ],
+      "tags": ["AWS", "EC2", "WordPress", "Linux"]
+    }
+  ],
+
+  "projects": [
+    {
+      "id": "p1",
+      "title": "Trash Detector Robot",
+      "subtitle": "YOLOv8 Real-time Waste Detection",
+      "description": "Intelligent trash detection system trained on the TACO dataset, reduced and categorized into 5 waste classes. Supports real-time webcam detection for autonomous robot integration.",
+      "category": "computer-vision",
+      "tags": ["Python", "YOLOv8", "OpenCV", "Ultralytics", "TACO Dataset"],
+      "github": "https://github.com/hasnae21/Trash-detector-Robot",
+      "demo": null,
+      "icon": "🤖",
+      "featured": true,
+      "date": "2024",
+      "status": "completed"
+    },
+    {
+      "id": "p2",
+      "title": "ROS2 Café Service Robot",
+      "subtitle": "Autonomous Indoor Delivery Robot",
+      "description": "Full ROS2 Humble stack for an autonomous mobile robot designed for café/restaurant environments. Features Nav2 autonomous navigation, SLAM Toolbox for mapping, and Gazebo simulation.",
+      "category": "robotics",
+      "tags": ["ROS2", "Nav2", "SLAM", "Python", "Gazebo", "URDF"],
+      "github": "https://github.com/hasnae21/ros2-cafe-service-robot",
+      "demo": null,
+      "icon": "",
+      "featured": true,
+      "date": "2025",
+      "status": "in-progress"
+    },
+    {
+      "id": "p3",
+      "title": "SerbAI Mobile App",
+      "subtitle": "Android Interface for Delivery Robot",
+      "description": "Android command & supervision interface for an autonomous line-following restaurant delivery robot. Features Auto/Manual/Stop modes, Bluetooth SPP control, 3 speed levels, and real-time event logging.",
+      "category": "mobile",
+      "tags": ["Android", "Java", "Kotlin", "Bluetooth SPP", "HC-05"],
+      "github": "https://github.com/hasnae21/SerbAI_mobile_application",
+      "demo": null,
+      "icon": "📱",
+      "featured": true,
+      "date": "2025",
+      "status": "completed"
+    },
+    {
+      "id": "p4",
+      "title": "SkinAId Web App",
+      "subtitle": "AI-Based Skin Disease Detection",
+      "description": "Web application using deep learning and image processing to detect and classify skin diseases from user-uploaded photos. Trained on Google Colab with Python and Jupyter.",
+      "category": "ai-ml",
+      "tags": ["Python", "Deep Learning", "OpenCV", "Jupyter", "Google Colab"],
+      "github": null,
+      "demo": null,
+      "icon": "🩺",
+      "featured": false,
+      "date": "2024",
+      "status": "completed"
+    },
+    {
+      "id": "p5",
+      "title": "Hack AI Morocco",
+      "subtitle": "Event Platform — 4-Day AI Hackathon",
+      "description": "Dynamic web platform for \"Hack AI Morocco\", a 4-day hackathon bringing AI students across Morocco together for intensive challenges. Built with Astro, Tailwind CSS, and TypeScript.",
+      "category": "web",
+      "tags": ["Astro", "TypeScript", "Tailwind CSS", "JavaScript", "GitHub Actions"],
+      "github": "https://github.com/hasnae21/Potfolio_Hackathon",
+      "demo": null,
+      "icon": "🏆",
+      "featured": false,
+      "date": "2024",
+      "status": "completed"
+    },
+    {
+      "id": "p6",
+      "title": "Laravel + React App",
+      "subtitle": "Full-Stack API Integration",
+      "description": "Full-stack application connecting a Laravel REST API backend with a React.js frontend. Implements CRUD operations, Blade templates, and demonstrates modern API consumption patterns.",
+      "category": "web",
+      "tags": ["Laravel", "React.js", "PHP", "MySQL", "REST API"],
+      "github": "https://github.com/hasnae21/Projet_7",
+      "demo": null,
+      "icon": "🌐",
+      "featured": false,
+      "date": "2023",
+      "status": "completed"
+    },
+    {
+      "id": "p7",
+      "title": "Free-Fall Detection System",
+      "subtitle": "Model-Based Design in Simulink",
+      "description": "Real-time free-fall detection logic in MATLAB/Simulink following Model-Based Design methodology (MIL/SIL testing) with accelerometer signal processing and threshold logic.",
+      "category": "embedded",
+      "tags": ["MATLAB", "Simulink", "Model-Based Design", "MIL/SIL"],
+      "github": null,
+      "demo": null,
+      "icon": "📡",
+      "featured": false,
+      "date": "2024",
+      "status": "completed"
+    },
+    {
+      "id": "p8",
+      "title": "FIR Filter on FPGA",
+      "subtitle": "VHDL Implementation on Cyclone V",
+      "description": "Digital FIR filter implemented in VHDL for Altera Cyclone V FPGA. Designed, synthesized, and verified with Quartus Prime and ModelSim simulation environments.",
+      "category": "embedded",
+      "tags": ["VHDL", "FPGA", "Cyclone V", "Quartus", "ModelSim"],
+      "github": null,
+      "demo": null,
+      "icon": "⚡",
+      "featured": false,
+      "date": "2024",
+      "status": "completed"
+    },
+    {
+      "id": "p9",
+      "title": "Secure Locking System",
+      "subtitle": "PIC16F877A + RFID Embedded Design",
+      "description": "Smart security locking system using PIC16F877A with RFID authentication, keypad input, and LCD display. Programmed in MicroC and fully simulated in Proteus 8.",
+      "category": "embedded",
+      "tags": ["PIC16F877A", "RFID", "MicroC", "Proteus 8", "LCD"],
+      "github": null,
+      "demo": null,
+      "icon": "🔐",
+      "featured": false,
+      "date": "2023",
+      "status": "completed"
+    }
+  ],
+
+  "certificates": [
+    {
+      "id": "c1",
+      "title": "Les fondamentaux de l'UX DESIGN",
+      "issuer": "OPENCLASSROOMS",
+      "date": "29/11/2022",
+      "category": "certification",
+      "image": "assets/img/certificates/openclassrooms-ux-design.jpg",
+      "url": null
+    },
+    {
+      "id": "c2",
+      "title": "Certificate of Appreciation — \"How to Be The Best Version of Yourself\"",
+      "issuer": "Climatic Peace Foundation (Head of Morocco OC)",
+      "date": "19 Feb 2025",
+      "category": "certification",
+      "image": "assets/img/certificates/climatic-peace-certificate.jpg",
+      "url": null
+    },
+    {
+      "id": "c3",
+      "title": "SOLIHACKATHON — Coding Competition Participation",
+      "issuer": "SOLICODE Tanger — OFPPT & Simplon",
+      "date": "2022",
+      "category": "competition",
+      "image": "assets/img/competitions/solihackathon-2022.jpg",
+      "url": null
+    },
+    {
+      "id": "c4",
+      "title": "SOLI HACKATHON — Certificat de Participation (2ème Edition)",
+      "issuer": "SOLICODE Tanger — OFPPT & Simplon",
+      "date": "15 Juin 2023",
+      "category": "competition",
+      "image": "assets/img/competitions/solihackathon-2023.jpg",
+      "url": null
+    },
+    {
+      "id": "c5",
+      "title": "Certificate of Achievement — Développeur Mobile",
+      "issuer": "Simplon.co — Centre Solidaire Digital SoliCode, Tanger",
+      "date": "04/09/2023",
+      "category": "training",
+      "image": "assets/img/certificates/simplon-mobile-2023.jpg",
+      "url": null
+    },
+    {
+      "id": "c6",
+      "title": "Certificat de Formation Qualifiante — Développeur Web",
+      "issuer": "OFPPT — Institut Spécialisé de Technologie Appliquée NTIC, Tanger",
+      "date": "Juin 2022",
+      "category": "certification",
+      "image": "assets/img/certificates/ofppt-web-2022.jpg",
+      "url": null
+    },
+    {
+      "id": "c7",
+      "title": "Certificate of Achievement — Développeur Web",
+      "issuer": "Simplon.co — Centre Solidaire Digital SoliCode, Tanger",
+      "date": "12/09/2022",
+      "category": "training",
+      "image": "assets/img/certificates/simplon-web-2022.jpg",
+      "url": null
+    },
+    {
+      "id": "c8",
+      "title": "Certificat de Formation Qualifiante — Développeur Mobile",
+      "issuer": "OFPPT — Office de la Formation Professionnelle et de la Promotion du Travail",
+      "date": "Juillet 2023",
+      "category": "certification",
+      "image": "assets/img/certificates/ofppt-mobile-2023.jpg",
+      "url": null
+    }
+  ],
+
+  "skills": {
+    "programming": ["Python", "C/C++", "JavaScript", "Java", "Kotlin", "TypeScript", "Assembler x86"],
+    "ai_cv": ["OpenCV", "YOLOv8", "Deep Learning", "Jupyter/Colab", "MATLAB/Simulink", "Model-Based Design"],
+    "web": ["HTML/CSS", "React.js", "Laravel/PHP", "Node.js/Express", "Astro/Tailwind", "WordPress"],
+    "robotics": ["ROS2/Nav2", "SLAM Toolbox", "Embedded C/MicroC", "VHDL/Quartus", "Arduino/PIC", "FPGA Cyclone V"],
+    "mobile": ["Android (Java/Kotlin)", "Figma", "Blender", "CATIA", "3D Printing"],
+    "tools": ["Git/GitHub", "Agile/Scrum", "AWS EC2", "Trello/Jira", "GitHub Actions", "MySQL"]
+  },
+
+  "languages": [
+    { "name": "Arabic", "level": "Native", "percentage": 100 },
+    { "name": "English", "level": "Fluent (B2)", "percentage": 90 },
+    { "name": "French", "level": "Advanced (C1)", "percentage": 80 },
+    { "name": "Spanish", "level": "Beginner (A2)", "percentage": 40 },
+    { "name": "Turkish", "level": "Basic (A1)", "percentage": 30 }
+  ],
+
+  "interests": ["AI Research", "Sport", "Volunteering", "Travel", "Hackathons", "3D Modeling", "Open Source"]
+}
