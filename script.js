@@ -6,6 +6,14 @@ const EMAILJS_SERVICE_ID  = 'service_3nqr84f';
 const EMAILJS_TEMPLATE_ID = 'template_mwyd959';
 const STORAGE_KEY = 'hasnae_portfolio_projects';
 const CERT_STORAGE_KEY = 'hasnae_portfolio_certificates';
+/* Inline SVG (no extra HTTP request) used when a certificate image 404s,
+   so visitors never see the browser's broken-image icon. */
+const CERT_PLACEHOLDER_SVG = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="280" viewBox="0 0 400 280">' +
+  '<rect width="400" height="280" fill="#11151f"/>' +
+  '<text x="50%" y="50%" fill="#5a6270" font-family="sans-serif" font-size="16" text-anchor="middle" dominant-baseline="middle">Certificate image unavailable</text>' +
+  '</svg>'
+);
 
 /* ── PROJECTS DATA ─── */
 const DEFAULT_PROJECTS = [
@@ -127,6 +135,11 @@ function getProjects() {
 function saveProjects(p) { localStorage.setItem(STORAGE_KEY, JSON.stringify(p)); }
 
 /* ─── CERTIFICATES ─── */
+/* Bumped whenever DEFAULT_CERTIFICATES changes below, so a browser holding
+   an older cached copy in localStorage auto-refreshes instead of silently
+   keeping stale (and possibly broken) data forever. */
+const CERT_DATA_VERSION = 2;
+
 const DEFAULT_CERTIFICATES = [
   {
     id: 'cert-1',
@@ -134,7 +147,7 @@ const DEFAULT_CERTIFICATES = [
     issuer: 'OPENCLASSROOMS',
     date: '29/11/2022',
     category: 'certification',
-    image: 'assets/img/certificates/openclassrooms-ux-design.jpg',
+    image: 'assets/img/certificates/certif5.jpg',
     url: null
   },
   {
@@ -143,7 +156,7 @@ const DEFAULT_CERTIFICATES = [
     issuer: 'Climatic Peace Foundation (Head of Morocco OC)',
     date: '19 Feb 2025',
     category: 'certification',
-    image: 'assets/img/certificates/climatic-peace-certificate.jpg',
+    image: 'assets/img/certificates/certif4.jpg',
     url: null
   },
   {
@@ -152,7 +165,7 @@ const DEFAULT_CERTIFICATES = [
     issuer: 'SOLICODE Tanger — OFPPT & Simplon',
     date: '2022',
     category: 'competition',
-    image: 'assets/img/competitions/solihackathon-2022.jpg',
+    image: 'assets/img/competitions/comp1.jpeg',
     url: null
   },
   {
@@ -161,7 +174,7 @@ const DEFAULT_CERTIFICATES = [
     issuer: 'SOLICODE Tanger — OFPPT & Simplon',
     date: '15 Juin 2023',
     category: 'competition',
-    image: 'assets/img/competitions/solihackathon-2023.jpg',
+    image: 'assets/img/competitions/comp0.jpeg',
     url: null
   },
   {
@@ -170,7 +183,7 @@ const DEFAULT_CERTIFICATES = [
     issuer: 'Simplon.co — Centre Solidaire Digital SoliCode, Tanger',
     date: '04/09/2023',
     category: 'training',
-    image: 'assets/img/certificates/simplon-mobile-2023.jpg',
+    image: 'assets/img/certificates/certif3.jpeg',
     url: null
   },
   {
@@ -179,7 +192,7 @@ const DEFAULT_CERTIFICATES = [
     issuer: 'OFPPT — Institut Spécialisé de Technologie Appliquée NTIC, Tanger',
     date: 'Juin 2022',
     category: 'certification',
-    image: 'assets/img/certificates/ofppt-web-2022.jpg',
+    image: 'assets/img/certificates/certif0.jpeg',
     url: null
   },
   {
@@ -188,7 +201,7 @@ const DEFAULT_CERTIFICATES = [
     issuer: 'Simplon.co — Centre Solidaire Digital SoliCode, Tanger',
     date: '12/09/2022',
     category: 'training',
-    image: 'assets/img/certificates/simplon-web-2022.jpg',
+    image: 'assets/img/certificates/certif2.jpeg',
     url: null
   },
   {
@@ -197,19 +210,29 @@ const DEFAULT_CERTIFICATES = [
     issuer: 'OFPPT — Office de la Formation Professionnelle et de la Promotion du Travail',
     date: 'Juillet 2023',
     category: 'certification',
-    image: 'assets/img/certificates/ofppt-mobile-2023.jpg',
+    image: 'assets/img/certificates/certif1.jpeg',
     url: null
   }
 ];
 
 function getCertificates() {
   try {
-    const s = localStorage.getItem(CERT_STORAGE_KEY);
-    return s ? JSON.parse(s) : DEFAULT_CERTIFICATES;
+    const raw = localStorage.getItem(CERT_STORAGE_KEY);
+    if (!raw) return DEFAULT_CERTIFICATES;
+    const parsed = JSON.parse(raw);
+    // Old plain-array format or an outdated version → discard and re-seed
+    // instead of keeping visitors stuck on a stale/broken cached copy.
+    if (Array.isArray(parsed) || !parsed.version || parsed.version !== CERT_DATA_VERSION) {
+      localStorage.removeItem(CERT_STORAGE_KEY);
+      return DEFAULT_CERTIFICATES;
+    }
+    return parsed.data;
   } catch { return DEFAULT_CERTIFICATES; }
 }
 
-function saveCertificates(c) { localStorage.setItem(CERT_STORAGE_KEY, JSON.stringify(c)); }
+function saveCertificates(c) {
+  localStorage.setItem(CERT_STORAGE_KEY, JSON.stringify({ version: CERT_DATA_VERSION, data: c }));
+}
 
 /* ── Render projects ─── */
 function renderProjects(filter = 'all') {
@@ -227,7 +250,7 @@ function renderProjects(filter = 'all') {
   grid.innerHTML = list.map(p => `
     <div class="project-card" data-category="${p.category}" data-id="${p.id}" data-aos="fade-up">
       <div class="project-image">
-        ${p.image ? `<img src="${p.image}" alt="${p.title}" onerror="this.style.display='none'">` : ''}
+        ${p.image ? `<img src="${p.image}" alt="${p.title}" loading="lazy" decoding="async" onerror="this.style.display='none'">` : ''}
         <div class="project-icon" ${p.image ? 'style="display:none"' : ''}>${p.icon || '📁'}</div>
         ${p.featured ? '<span class="featured-badge">⭐ Featured</span>' : ''}
         <div class="project-overlay">
@@ -266,7 +289,7 @@ function renderCertificates() {
   
   grid.innerHTML = certs.map(cert => `
     <div class="certificate-card" data-aos="fade-up" onclick="openCertificateModal('${cert.image}', '${cert.title}')">
-      <img src="${cert.image}" alt="${cert.title}" class="certificate-image" onerror="this.src='assets/img/cert-placeholder.png'">
+      <img src="${cert.image}" alt="${cert.title}" class="certificate-image" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${CERT_PLACEHOLDER_SVG}'">
       <div class="certificate-body">
         <span class="certificate-category ${cert.category}">${cert.category}</span>
         <h3 class="certificate-title">${cert.title}</h3>

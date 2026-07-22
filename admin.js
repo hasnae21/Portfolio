@@ -67,17 +67,36 @@ function generateId(title) {
 }
 
 /* ─── Certificates CRUD ─── */
-const DEFAULT_CERTIFICATES = [];
+/* Must match CERT_DATA_VERSION and DEFAULT_CERTIFICATES in script.js —
+   both files read/write the same localStorage key. */
+const CERT_DATA_VERSION = 2;
+
+const DEFAULT_CERTIFICATES = [
+  { id: 'cert-1', title: 'Les fondamentaux de l\'UX DESIGN', issuer: 'OPENCLASSROOMS', date: '29/11/2022', category: 'certification', image: 'assets/img/certificates/certif5.jpg', url: null },
+  { id: 'cert-2', title: 'Certificate of Appreciation — "How to Be The Best Version of Yourself"', issuer: 'Climatic Peace Foundation (Head of Morocco OC)', date: '19 Feb 2025', category: 'certification', image: 'assets/img/certificates/certif4.jpg', url: null },
+  { id: 'cert-3', title: 'SOLIHACKATHON — Coding Competition Participation', issuer: 'SOLICODE Tanger — OFPPT & Simplon', date: '2022', category: 'competition', image: 'assets/img/competitions/comp1.jpeg', url: null },
+  { id: 'cert-4', title: 'SOLI HACKATHON — Certificat de Participation (2ème Edition)', issuer: 'SOLICODE Tanger — OFPPT & Simplon', date: '15 Juin 2023', category: 'competition', image: 'assets/img/competitions/comp0.jpeg', url: null },
+  { id: 'cert-5', title: 'Certificate of Achievement — Développeur Mobile', issuer: 'Simplon.co — Centre Solidaire Digital SoliCode, Tanger', date: '04/09/2023', category: 'training', image: 'assets/img/certificates/certif3.jpeg', url: null },
+  { id: 'cert-6', title: 'Certificat de Formation Qualifiante — Développeur Web', issuer: 'OFPPT — Institut Spécialisé de Technologie Appliquée NTIC, Tanger', date: 'Juin 2022', category: 'certification', image: 'assets/img/certificates/certif0.jpeg', url: null },
+  { id: 'cert-7', title: 'Certificate of Achievement — Développeur Web', issuer: 'Simplon.co — Centre Solidaire Digital SoliCode, Tanger', date: '12/09/2022', category: 'training', image: 'assets/img/certificates/certif2.jpeg', url: null },
+  { id: 'cert-8', title: 'Certificat de Formation Qualifiante — Développeur Mobile', issuer: 'OFPPT — Office de la Formation Professionnelle et de la Promotion du Travail', date: 'Juillet 2023', category: 'certification', image: 'assets/img/certificates/certif1.jpeg', url: null }
+];
 
 function getCertificates() {
   try {
-    const s = localStorage.getItem(CERT_STORAGE_KEY);
-    return s ? JSON.parse(s) : DEFAULT_CERTIFICATES;
+    const raw = localStorage.getItem(CERT_STORAGE_KEY);
+    if (!raw) return DEFAULT_CERTIFICATES;
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed) || !parsed.version || parsed.version !== CERT_DATA_VERSION) {
+      localStorage.removeItem(CERT_STORAGE_KEY);
+      return DEFAULT_CERTIFICATES;
+    }
+    return parsed.data;
   } catch { return DEFAULT_CERTIFICATES; }
 }
 
 function saveCertificates(certs) {
-  localStorage.setItem(CERT_STORAGE_KEY, JSON.stringify(certs));
+  localStorage.setItem(CERT_STORAGE_KEY, JSON.stringify({ version: CERT_DATA_VERSION, data: certs }));
   renderCertificatesTable();
 }
 
