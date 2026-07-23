@@ -299,15 +299,6 @@
       "url": null
     },
     {
-      "id": "c6",
-      "title": "Certificat de Formation Qualifiante — Développeur Web",
-      "issuer": "OFPPT — Institut Spécialisé de Technologie Appliquée NTIC, Tanger",
-      "date": "Juin 2022",
-      "category": "certification",
-      "image": "assets/img/certificates/certif0.jpeg",
-      "url": null
-    },
-    {
       "id": "c7",
       "title": "Certificate of Achievement — Développeur Web",
       "issuer": "Simplon.co — Centre Solidaire Digital SoliCode, Tanger",
@@ -315,17 +306,9 @@
       "category": "training",
       "image": "assets/img/certificates/certif2.jpeg",
       "url": null
-    },
-    {
-      "id": "c8",
-      "title": "Certificat de Formation Qualifiante — Développeur Mobile",
-      "issuer": "OFPPT — Office de la Formation Professionnelle et de la Promotion du Travail",
-      "date": "Juillet 2023",
-      "category": "certification",
-      "image": "assets/img/certificates/certif1.jpeg",
-      "url": null
     }
   ],
+
 
   "skills": {
     "programming": ["Python", "C/C++", "JavaScript", "Java", "Kotlin", "TypeScript", "Assembler x86"],
